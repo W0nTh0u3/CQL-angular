@@ -1,0 +1,57 @@
+.page-hero {
+  min-height: 58vh;
+  padding: 10rem max(6vw, 1.5rem) 4rem;
+  display: grid;
+  align-content: end;
+  gap: 1.25rem;
+  background: #d9d2c6;
+  color: #191b1c;
+}
+.page-hero h1 {
+  max-width: 850px;
+}
+.page-hero p:last-child {
+  max-width: 650px;
+  color: #5d5953;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.industry-section {
+  padding-block: 5rem 8rem;
+}
+.industries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #bdb5aa;
+}
+.industries article {
+  min-height: 10rem;
+  padding: 1.2rem;
+  border-right: 1px solid #bdb5aa;
+  border-bottom: 1px solid #bdb5aa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.industries article:nth-child(3n + 1) {
+  border-left: 1px solid #bdb5aa;
+}
+.industries span {
+  font: 0.7rem var(--mono);
+  color: #e65d2b;
+}
+.industries h2 {
+  font-size: clamp(1.05rem, 1.8vw, 1.5rem);
+  font-weight: 500;
+  margin: 1rem 0 0;
+  max-width: 14rem;
+}
+@media (max-width: 650px) {
+  .industries {
+    grid-template-columns: 1fr;
+  }
+  .industries article {
+    min-height: 7rem;
+    border-left: 1px solid #bdb5aa !important;
+  }
+}

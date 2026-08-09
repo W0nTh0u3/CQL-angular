@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { people } from '../../content/cql-content';
 
 @Component({
   selector: 'app-people',
@@ -6,4 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './people.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PeopleComponent {}
+export class PeopleComponent { protected readonly people = people; }

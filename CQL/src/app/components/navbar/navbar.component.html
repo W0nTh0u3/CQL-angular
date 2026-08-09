@@ -1,6 +1,6 @@
 <header class="navbar-container">
   <nav aria-label="Primary navigation">
-    <a class="logo" routerLink="/" (click)="closeMenu()">CQL</a>
+    <a class="logo" routerLink="/" (click)="closeMenu()"><span>CQL</span><small>Business Systems Consulting</small></a>
 
     <div class="desktop-menu">
       @for (item of items; track item.path) {
@@ -18,12 +18,12 @@
       aria-label="Toggle navigation menu"
       (click)="toggleMenu()"
     >
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </button>
   </nav>
 
   @if (isMenuOpen()) {
-    <div id="mobile-menu" class="mobile-menu">
+    <div id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
       @for (item of items; track item.path) {
         <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
           {{ item.label }}

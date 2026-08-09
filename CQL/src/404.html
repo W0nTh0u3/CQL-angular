@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages serves this document for unknown paths. Preserve the requested
+      // Angular route, then hand it back to the app at the repository root.
+      (function () {
+        var repositoryBase = '/CQL-angular/';
+        var requestedPath = window.location.pathname.slice(repositoryBase.length) || '/';
+        var target = repositoryBase + '?p=' + encodeURIComponent('/' + requestedPath.replace(/^\/+/, ''));
+        if (window.location.search) target += '&q=' + encodeURIComponent(window.location.search.slice(1));
+        if (window.location.hash) target += '&h=' + encodeURIComponent(window.location.hash.slice(1));
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

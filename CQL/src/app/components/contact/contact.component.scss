@@ -1,0 +1,55 @@
+.contact {
+  min-height: 100vh;
+  padding: 10rem max(6vw, 1.5rem) 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+  background: radial-gradient(circle at 12% 82%, rgb(230 93 43 / 14%), transparent 24%), #e4ddd1;
+  color: #1a1b1c;
+}
+.lead {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+address {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  font-style: normal;
+  border-top: 3px solid #e65d2b;
+  background: #eee9df;
+  color: #1a1b1c;
+  box-shadow: 1rem 1rem 0 rgb(230 93 43 / 18%);
+}
+.contact-block {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #2d2926;
+}
+.contact-block p {
+  margin: 0.16rem 0;
+  font-size: 1.05rem;
+}
+.label {
+  font: 0.7rem var(--mono) !important;
+  color: #b64622;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.contact-block .contact-value {
+  display: block;
+  margin: 0.16rem 0;
+  color: inherit;
+  font: clamp(1.15rem, 2.5vw, 1.85rem) / 1.2 Georgia, "Times New Roman", serif;
+  text-decoration: none;
+}
+.contact a.contact-value {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-line: underline;
+}
+@media (max-width: 700px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 8rem;
+  }
+}

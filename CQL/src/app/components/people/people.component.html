@@ -1,15 +1,2 @@
-<section class="people-hero" aria-labelledby="people-title">
-  <div>
-    <h1 id="people-title">People</h1>
-    <p>
-      We are experienced in Process Management, Cost Management, Total Quality Management, Human Resource Management, and Information Technology Development and Support.
-    </p>
-  </div>
-</section>
-
-<section class="people-content">
-  <h2>Experienced partners for your business</h2>
-  <p>
-    Our people bring practical, people-driven support to the business challenges that matter most.
-  </p>
-</section>
+<section class="people-hero" aria-labelledby="people-title"><p class="eyebrow">The people behind the practice</p><h1 id="people-title">Expertise with<br><em>range.</em></h1><p>Experienced in process, cost, total quality, human resource management, and information technology development and support.</p></section>
+<section class="people-content content-shell" aria-label="CQL consultants">@for (person of people; track person.name; let i = $index) { <article class="profile reveal"><div class="profile-mark"><span>0{{ i + 1 }}</span><span class="initials">{{ person.name.charAt(0) }}{{ person.name.split(' ')[1].charAt(0) }}</span></div><div><p class="eyebrow">{{ person.role || 'Consultant' }}</p><h2>{{ person.name }}</h2><h3>{{ person.focus }}</h3>@for (item of person.experience; track item) { <p>{{ item }}</p> }<p class="qualification"><strong>Qualifications</strong>{{ person.qualifications }}</p></div></article> }</section>

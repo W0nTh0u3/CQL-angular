@@ -21,6 +21,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/404.html",
               {
                 "glob": "**/*",
                 "input": "src/assets",

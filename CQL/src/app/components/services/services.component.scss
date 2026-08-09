@@ -1,0 +1,111 @@
+.page-hero {
+  min-height: 62vh;
+  padding: 10rem max(6vw, 1.5rem) 4rem;
+  display: grid;
+  align-content: end;
+  gap: 1.25rem;
+  background: linear-gradient(120deg, #eee9df 30%, #d9d2c6);
+  color: #191b1c;
+}
+.page-hero h1 {
+  max-width: 850px;
+}
+.page-hero p:last-child {
+  max-width: 580px;
+  color: #5a5650;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+.services-list {
+  padding-block: 4rem 7rem;
+}
+.service {
+  border-top: 1px solid #c9c2b7;
+}
+.service:last-of-type {
+  border-bottom: 1px solid #c9c2b7;
+}
+summary {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 2rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.35rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary span,
+summary b {
+  color: #e65d2b;
+  font: 600 0.72rem/1 var(--mono);
+  letter-spacing: 0.1em;
+}
+summary b {
+  font-size: 1.45rem;
+  text-align: right;
+  transition: transform 0.25s;
+}
+details[open] summary b {
+  transform: rotate(45deg);
+}
+h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2.4rem);
+  font-weight: 500;
+}
+.service-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(12rem, 0.75fr);
+  gap: 2.5rem;
+  padding: 0 0 2.25rem 4.5rem;
+  color: #4e4a45;
+  line-height: 1.65;
+}
+.service-detail > p {
+  margin: 0;
+  max-width: 45rem;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 0.75rem/1.55 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+li {
+  border-top: 1px solid #d7d0c6;
+  padding: 0.45rem 0;
+}
+.service-notes {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.service-notes article {
+  border-top: 2px solid #e65d2b;
+  padding-top: 0.75rem;
+}
+h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.service-notes p {
+  font-size: 0.9rem;
+}
+.text-link {
+  margin-top: 2rem;
+}
+@media (max-width: 650px) {
+  .service-detail {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+  .service-notes {
+    grid-template-columns: 1fr;
+  }
+}

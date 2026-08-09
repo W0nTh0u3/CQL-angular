@@ -28,19 +28,19 @@
   bottom: 2rem;
   right: max(6vw, 1.5rem);
   font: 0.7rem var(--mono);
-  color: #e65d2b;
+  color: var(--signal-orange);
   letter-spacing: 0.11em;
 }
 .signal-grid {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 80% 15%, #462014 0, transparent 28%);
+  background: radial-gradient(circle at 80% 15%, #0e2a50 0, transparent 28%);
 }
 .signal-grid i {
   position: absolute;
   width: 10px;
   aspect-ratio: 1;
-  border: 1px solid #e65d2b;
+  border: 1px solid #f76d16;
   border-radius: 50%;
   box-shadow: 0 0 0 5px #121416;
 }
@@ -51,7 +51,7 @@
   left: 7px;
   width: 24vw;
   height: 1px;
-  background: linear-gradient(90deg, #e65d2b, transparent);
+  background: linear-gradient(90deg, #f76d16, transparent);
   transform-origin: left;
 }
 .signal-grid i:nth-child(1) {
@@ -116,7 +116,7 @@
   gap: 1.25rem;
 }
 .principles article {
-  border-top: 2px solid #e65d2b;
+  border-top: 2px solid var(--signal-orange);
   padding-top: 1rem;
 }
 .principles h3 {
@@ -131,7 +131,7 @@
 .route-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: #e65d2b;
+  background: var(--accent);
 }
 .route-grid a {
   min-height: 15rem;
@@ -141,11 +141,17 @@
   justify-content: space-between;
   color: #18191a;
   text-decoration: none;
-  border-right: 1px solid #262321;
+  border-right: 1px solid rgb(245 248 255 / 30%);
   transition: background 0.2s;
 }
+.route-grid .eyebrow {
+  color: rgb(245 248 255 / 74%);
+}
 .route-grid a:hover {
-  background: #f5f0e7;
+  background: #f5f8ff;
+}
+.route-grid a:hover .eyebrow {
+  color: var(--accent-deep);
 }
 .route-grid strong {
   font:

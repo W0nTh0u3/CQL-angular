@@ -13,7 +13,7 @@
 }
 
 .eyebrow {
-  color: #f76d16;
+  color: var(--accent);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -31,7 +31,7 @@ p {
 a {
   display: inline-block;
   margin-top: 1rem;
-  border: 2px solid #f76d16;
+  border: 2px solid var(--accent);
   border-radius: 0.25rem;
   padding: 0.75rem 1.2rem;
   color: #fff;
@@ -40,5 +40,5 @@ a {
 
 a:hover,
 a:focus-visible {
-  background: #f76d16;
+  background: var(--accent);
 }

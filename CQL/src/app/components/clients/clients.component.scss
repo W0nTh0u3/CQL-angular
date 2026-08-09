@@ -4,7 +4,7 @@
   display: grid;
   align-content: end;
   gap: 1.25rem;
-  background: #d9d2c6;
+  background: #dce8f3;
   color: #191b1c;
 }
 .page-hero h1 {
@@ -38,7 +38,7 @@
 }
 .industries span {
   font: 0.7rem var(--mono);
-  color: #e65d2b;
+  color: var(--signal-orange);
 }
 .industries h2 {
   font-size: clamp(1.05rem, 1.8vw, 1.5rem);

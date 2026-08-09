@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
   align-items: center;
-  background: radial-gradient(circle at 12% 82%, rgb(230 93 43 / 14%), transparent 24%), #e4ddd1;
+  background: radial-gradient(circle at 12% 82%, rgb(20 99 195 / 14%), transparent 24%), #e4edf6;
   color: #1a1b1c;
 }
 .lead {
@@ -15,10 +15,10 @@
 address {
   padding: clamp(1.5rem, 4vw, 3rem);
   font-style: normal;
-  border-top: 3px solid #e65d2b;
-  background: #eee9df;
+  border-top: 3px solid var(--signal-orange);
+  background: #f6faff;
   color: #1a1b1c;
-  box-shadow: 1rem 1rem 0 rgb(230 93 43 / 18%);
+  box-shadow: 1rem 1rem 0 rgb(20 99 195 / 18%);
 }
 .contact-block {
   padding: 1.1rem 0;

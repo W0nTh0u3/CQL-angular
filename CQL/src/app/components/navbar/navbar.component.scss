@@ -80,7 +80,7 @@ a {
 .mobile-menu a:hover,
 .mobile-menu a.active {
   color: #17191a;
-  background: #e65d2b;
+  background: var(--accent);
 }
 
 .menu-toggle {

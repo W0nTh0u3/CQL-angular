@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: CQL
     steps:
       - name: Check out source
         uses: actions/checkout@v6
@@ -25,6 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: CQL/package-lock.json
       - name: Install dependencies
         run: npm ci
       - name: Build for GitHub Pages
@@ -34,7 +38,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/CQL/browser
+          path: CQL/dist/CQL/browser
 
   deploy:
     environment:

@@ -1,28 +1,24 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { ApiServiceService } from 'src/app/service/api-service.service';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+import { navigationItems } from '../../navigation';
 
 @Component({
   selector: 'app-navbar',
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  styleUrl: './navbar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
+  protected readonly items = navigationItems;
+  protected readonly isMenuOpen = signal(false);
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private _api: ApiServiceService
-  ) {
-
+  protected toggleMenu(): void {
+    this.isMenuOpen.update((isOpen) => !isOpen);
   }
 
-  public routerLinks = this._api.routerLinks;
+  protected closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
 }

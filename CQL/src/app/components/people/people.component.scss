@@ -1,0 +1,41 @@
+.people-hero {
+  display: grid;
+  min-height: 55vh;
+  padding: 8rem 10% 3rem;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+  background: radial-gradient(rgb(0 40 56 / 80%), rgb(0 40 56 / 80%)), url('../../../assets/images/city-438393_1920.jpg') center bottom / cover;
+}
+
+.people-hero div {
+  max-width: 850px;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.people-content {
+  min-height: 45vh;
+  padding: 4rem 10%;
+  text-align: center;
+  background: #ffa54b;
+}
+
+.people-content h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.people-content p {
+  max-width: 700px;
+  margin: auto;
+}

@@ -1,3 +1,132 @@
-body {
-    background-color: black;
+.hero {
+  display: grid;
+  min-height: 100vh;
+  padding: 7rem 10% 3rem;
+  color: #fff;
+  background: radial-gradient(rgb(0 40 56 / 80%), rgb(0 40 56 / 80%)), url('../../../assets/images/office-1209640_1920.jpg') center / cover;
+}
+
+.hero-content {
+  display: grid;
+  width: min(100%, 1050px);
+  margin: auto;
+  gap: 3rem;
+  text-align: center;
+}
+
+@keyframes intro-from-left {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes intro-from-right {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.intro-brand {
+  animation: intro-from-left 0.5s ease-out both;
+}
+
+.intro-message {
+  animation: intro-from-right 0.5s ease-out both;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(4rem, 10vw, 7rem);
+  letter-spacing: 0.12em;
+}
+
+.subtitle {
+  margin: 0.25rem 0;
+  color: #f76d16;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.hero-message p {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.cta {
+  display: inline-block;
+  border: 2px solid #f76d16;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: #f76d16;
+}
+
+.about {
+  padding: 5rem 10%;
+  background: #ffa54b;
+}
+
+.intro {
+  width: min(100%, 900px);
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.intro p,
+article p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.principles {
+  display: grid;
+  max-width: 1200px;
+  margin: auto;
+  gap: 3rem;
+}
+
+article {
+  text-align: center;
+}
+
+article img {
+  width: min(9rem, 42%);
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .principles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-brand,
+  .intro-message {
+    animation: none;
+  }
 }

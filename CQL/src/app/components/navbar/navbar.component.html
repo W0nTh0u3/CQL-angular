@@ -1,33 +1,34 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="false"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a *ngFor="let link of routerLinks" mat-list-item [routerLink]='["/" + link.linkName]'>{{link.name}}</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>CQL</span>
-      <div *ngIf="!(isHandset$ | async)">
-        <a *ngFor="let link of routerLinks" [routerLink]='["/" + link.linkName]'>{{link.name}}</a>
-      </div>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<header class="navbar-container">
+  <nav aria-label="Primary navigation">
+    <a class="logo" routerLink="/" (click)="closeMenu()">CQL</a>
+
+    <div class="desktop-menu">
+      @for (item of items; track item.path) {
+        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  @if (isMenuOpen()) {
+    <div id="mobile-menu" class="mobile-menu">
+      @for (item of items; track item.path) {
+        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+  }
+</header>

@@ -1,1 +1,31 @@
-<p>home works!</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-content">
+    <div class="intro-brand">
+      <h1 id="hero-title">CQL</h1>
+      <p class="subtitle">Business Systems Consulting</p>
+    </div>
+    <div class="hero-message intro-message">
+      <p>Providing business solutions to help you succeed.</p>
+      <a routerLink="/people" class="cta">Meet our people</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" aria-labelledby="about-title">
+  <div class="intro">
+    <h2 id="about-title">Guided by what matters</h2>
+    <p>
+      CQL Business Systems Consulting was formed after realizing a strong need for a service that can provide a unique ongoing support system to transcend the fierce competition of the business environment today. We provide turnkey business solutions and are guided by:
+    </p>
+  </div>
+
+  <div class="principles">
+    @for (principle of principles; track principle.title) {
+      <article>
+        <img [src]="principle.icon" [alt]="principle.title + ' icon'" />
+        <h3>{{ principle.title }}</h3>
+        <p>{{ principle.description }}</p>
+      </article>
+    }
+  </div>
+</section>

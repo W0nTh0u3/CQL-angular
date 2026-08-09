@@ -1,40 +1,18 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { NavbarComponent } from './navbar.component';
 
 describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
-
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [NavbarComponent],
-      imports: [
-        NoopAnimationsModule,
-        LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
-      ]
+  it('renders every application route', async () => {
+    await TestBed.configureTestingModule({
+      imports: [NavbarComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
+    const fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
-  });
 
-  it('should compile', () => {
-    expect(component).toBeTruthy();
+    expect(fixture.nativeElement.querySelectorAll('.desktop-menu a')).toHaveLength(6);
   });
 });

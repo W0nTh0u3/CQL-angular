@@ -35,6 +35,6 @@ The repository workflow at [`../.github/workflows/deploy-pages.yml`](../.github/
 2. Set **Build and deployment** to **GitHub Actions**.
 3. Push to `main`, or run **Deploy CQL to GitHub Pages** from the Actions tab.
 
-The workflow builds for `/CQL-angular/` and publishes `dist/CQL/browser`. [`src/404.html`](./src/404.html) handles direct clean route requests such as `/CQL-angular/services`.
+The workflow builds for `/CQL/` and publishes `dist/CQL/browser`. [`src/404.html`](./src/404.html) handles direct clean route requests such as `/CQL/services`.
 
 If the repository name or deployment path changes, update `repositoryBase` in `src/404.html` and the workflow’s `--base-href` value.

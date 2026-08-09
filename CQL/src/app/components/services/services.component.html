@@ -1,7 +1,43 @@
-<section class="page-hero" aria-labelledby="services-title"><p class="eyebrow">Capabilities / 01–07</p><h1 id="services-title">Built for the<br><em>whole system.</em></h1><p>Customized approaches for organizations setting up, expanding, merging, or reorganizing.</p></section>
+<section class="page-hero" aria-labelledby="services-title">
+  <p class="eyebrow">Capabilities / 01–07</p>
+  <h1 id="services-title">Built for the<br /><em>whole system.</em></h1>
+  <p>
+    Customized approaches for organizations setting up, expanding, merging, or
+    reorganizing.
+  </p>
+</section>
 <section class="content-shell services-list" aria-label="CQL services">
   @for (service of services; track service.number) {
-    <details [open]="$first" class="service reveal"><summary><span>{{ service.number }}</span><h2>{{ service.title }}</h2><b aria-hidden="true">+</b></summary><div class="service-detail"><p>{{ service.introduction }}</p>@if (service.offerings.length) { <ul>@for (offering of service.offerings; track offering) { <li>{{ offering }}</li> }</ul> } @if (service.notes) { <div class="service-notes">@for (note of service.notes; track note.heading) { <article><h3>{{ note.heading }}</h3><p>{{ note.description }}</p></article> }</div> }</div></details>
+    <details [open]="$first" class="service reveal">
+      <summary>
+        <span>{{ service.number }}</span>
+        <h2>{{ service.title }}</h2>
+        <b aria-hidden="true">+</b>
+      </summary>
+      <div class="service-detail">
+        <p>{{ service.introduction }}</p>
+        @if (service.offerings.length) {
+          <ul>
+            @for (offering of service.offerings; track offering) {
+              <li>{{ offering }}</li>
+            }
+          </ul>
+        }
+        @if (service.notes) {
+          <div class="service-notes">
+            @for (note of service.notes; track note.heading) {
+              <article>
+                <h3>{{ note.heading }}</h3>
+                <p>{{ note.description }}</p>
+              </article>
+            }
+          </div>
+        }
+      </div>
+    </details>
   }
-  <a class="text-link" routerLink="/contact">Discuss your requirements <span>↗</span></a>
+  <a class="text-link" routerLink="/contact"
+    >Discuss your requirements
+    <span class="arrow-icon" aria-hidden="true"></span
+  ></a>
 </section>

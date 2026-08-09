@@ -1,10 +1,16 @@
 <header class="navbar-container">
   <nav aria-label="Primary navigation">
-    <a class="logo" routerLink="/" (click)="closeMenu()"><span>CQL</span><small>Business Systems Consulting</small></a>
+    <a class="logo" routerLink="/" (click)="closeMenu()"
+      ><span>CQL</span><small>Business Systems Consulting</small></a
+    >
 
     <div class="desktop-menu">
       @for (item of items; track item.path) {
-        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+        >
           {{ item.label }}
         </a>
       }
@@ -25,7 +31,12 @@
   @if (isMenuOpen()) {
     <div id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
       @for (item of items; track item.path) {
-        <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+          (click)="closeMenu()"
+        >
           {{ item.label }}
         </a>
       }

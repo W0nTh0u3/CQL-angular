@@ -1,3 +1,66 @@
-<section class="hero" aria-labelledby="hero-title"><div class="signal-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="hero-content"><p class="eyebrow">CQL / Business Systems Consulting</p><h1 id="hero-title">Systems<br>in <em>motion.</em></h1><p class="hero-message">Connected business solutions for organizations navigating change, competition, and growth.</p><a routerLink="/services" class="button">Explore our services <span>↗</span></a></div><p class="hero-note">Process · Cost · Quality · IT</p></section>
-<section class="about content-shell" aria-labelledby="about-title"><p class="eyebrow">A practical point of view</p><div class="about-intro"><h2 id="about-title">Business performance is a connected <em>system.</em></h2><p>CQL Business Systems Consulting was formed in response to a need for ongoing support that helps organizations move beyond fierce competition. We provide turnkey business solutions shaped around the way your organization works.</p></div><div class="principles">@for (principle of principles; track principle.title) { <article class="reveal"><p class="eyebrow">{{ principle.title }}</p><h3>{{ principle.title === 'Vision' ? 'Lead the changing times.' : principle.title === 'Mission' ? 'Best-fit practices, built around people.' : 'Quality that creates value.' }}</h3><p>{{ principle.description }}</p></article> }</div></section>
-<section class="route-grid"><a routerLink="/edge"><span class="eyebrow">01 / The CQL Way</span><strong>See the whole system <i>↗</i></strong></a><a routerLink="/people"><span class="eyebrow">02 / Our people</span><strong>Meet the practice <i>↗</i></strong></a><a routerLink="/contact"><span class="eyebrow">03 / Contact</span><strong>Start a conversation <i>↗</i></strong></a></section>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="signal-grid" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow">CQL / Business Systems Consulting</p>
+    <h1 id="hero-title">Systems<br />in <em>motion.</em></h1>
+    <p class="hero-message">
+      Connected business solutions for organizations navigating change,
+      competition, and growth.
+    </p>
+    <a routerLink="/services" class="button"
+      >Explore our services <span class="arrow-icon" aria-hidden="true"></span
+    ></a>
+  </div>
+  <p class="hero-note">Process · Cost · Quality · IT</p>
+</section>
+<section class="about content-shell" aria-labelledby="about-title">
+  <p class="eyebrow">A practical point of view</p>
+  <div class="about-intro">
+    <h2 id="about-title">
+      Business performance is a connected <em>system.</em>
+    </h2>
+    <p>
+      CQL Business Systems Consulting was formed in response to a need for
+      ongoing support that helps organizations move beyond fierce competition.
+      We provide turnkey business solutions shaped around the way your
+      organization works.
+    </p>
+  </div>
+  <div class="principles">
+    @for (principle of principles; track principle.title) {
+      <article class="reveal">
+        <p class="eyebrow">{{ principle.title }}</p>
+        <h3>
+          {{
+            principle.title === "Vision"
+              ? "Lead the changing times."
+              : principle.title === "Mission"
+                ? "Best-fit practices, built around people."
+                : "Quality that creates value."
+          }}
+        </h3>
+        <p>{{ principle.description }}</p>
+      </article>
+    }
+  </div>
+</section>
+<section class="route-grid">
+  <a routerLink="/edge"
+    ><span class="eyebrow">01 / The CQL Way</span
+    ><strong
+      >See the whole system
+      <span class="arrow-icon" aria-hidden="true"></span></strong></a
+  ><a routerLink="/people"
+    ><span class="eyebrow">02 / Our people</span
+    ><strong
+      >Meet the practice
+      <span class="arrow-icon" aria-hidden="true"></span></strong></a
+  ><a routerLink="/contact"
+    ><span class="eyebrow">03 / Contact</span
+    ><strong
+      >Start a conversation
+      <span class="arrow-icon" aria-hidden="true"></span></strong
+  ></a>
+</section>

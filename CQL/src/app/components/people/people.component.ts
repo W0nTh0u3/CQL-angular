@@ -7,4 +7,6 @@ import { people } from '../../content/cql-content';
   styleUrl: './people.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PeopleComponent { protected readonly people = people; }
+export class PeopleComponent {
+  protected readonly people = people;
+}

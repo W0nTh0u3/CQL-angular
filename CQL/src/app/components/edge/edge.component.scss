@@ -16,8 +16,11 @@
   line-height: 1.65;
 }
 .system-map {
+  --orbit: 14%;
+  --node-size: clamp(4.5rem, 16vw, 7rem);
+  --core-size: clamp(7.5rem, 25vw, 11rem);
   position: relative;
-  width: min(44rem, 90vw);
+  width: min(44rem, 94vw);
   aspect-ratio: 1;
   margin: auto;
 }
@@ -26,8 +29,8 @@
   z-index: 2;
   display: grid;
   place-items: center;
-  min-width: 7rem;
-  aspect-ratio: 1;
+  width: var(--node-size);
+  height: var(--node-size);
   border: 1px solid #f07542;
   border-radius: 50%;
   padding: 1rem;
@@ -42,25 +45,26 @@
 .core {
   top: 50%;
   left: 50%;
-  min-width: 11rem;
+  width: var(--core-size);
+  height: var(--core-size);
   border: 2px solid #e65d2b;
   background: #e65d2b;
   color: #17191a;
 }
 .process {
-  top: 12%;
+  top: var(--orbit);
   left: 50%;
 }
 .cost {
   top: 50%;
-  left: 12%;
+  left: var(--orbit);
 }
 .quality {
   top: 50%;
-  left: 88%;
+  left: calc(100% - var(--orbit));
 }
 .it {
-  top: 88%;
+  top: calc(100% - var(--orbit));
   left: 50%;
 }
 .line {
@@ -69,7 +73,7 @@
   top: 50%;
   left: 50%;
   width: 1px;
-  height: 38%;
+  height: 36%;
   transform-origin: top;
   background: linear-gradient(#e65d2b, transparent);
 }
@@ -100,16 +104,17 @@
 @media (max-width: 760px) {
   .edge {
     grid-template-columns: 1fr;
+    justify-items: center;
     padding-top: 8rem;
   }
   .system-map {
-    width: min(27rem, 95vw);
+    --orbit: 15%;
+    --node-size: clamp(4.5rem, 17vw, 5.5rem);
+    --core-size: clamp(7.25rem, 26vw, 8.5rem);
+    width: min(27rem, 100%);
   }
   .node {
-    min-width: 5rem;
+    padding: 0.6rem;
     font-size: 0.58rem;
-  }
-  .core {
-    min-width: 8rem;
   }
 }

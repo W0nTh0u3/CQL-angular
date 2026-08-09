@@ -13,17 +13,28 @@ describe('NavbarComponent', () => {
     const fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelectorAll('.desktop-menu a')).toHaveLength(6);
+    expect(
+      fixture.nativeElement.querySelectorAll('.desktop-menu a'),
+    ).toHaveLength(6);
   });
 
   it('opens and closes the mobile menu', async () => {
-    await TestBed.configureTestingModule({ imports: [NavbarComponent], providers: [provideRouter([])] }).compileComponents();
+    await TestBed.configureTestingModule({
+      imports: [NavbarComponent],
+      providers: [provideRouter([])],
+    }).compileComponents();
     const fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
-    const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
-    button.click(); fixture.detectChanges();
-    expect(fixture.nativeElement.querySelectorAll('#mobile-menu a')).toHaveLength(6);
-    button.click(); fixture.detectChanges();
+    const button = fixture.nativeElement.querySelector(
+      'button',
+    ) as HTMLButtonElement;
+    button.click();
+    fixture.detectChanges();
+    expect(
+      fixture.nativeElement.querySelectorAll('#mobile-menu a'),
+    ).toHaveLength(6);
+    button.click();
+    fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#mobile-menu')).toBeNull();
   });
 });

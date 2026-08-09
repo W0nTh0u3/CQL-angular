@@ -1,8 +1,9 @@
 :root {
   color: #1b1c1d;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
   font-synthesis: none;
   --mono: "Courier New", monospace;
+  --serif: "IBM Plex Serif", Georgia, serif;
   --accent: #1463c3;
   --accent-bright: #2f91ed;
   --accent-deep: #0d4b95;
@@ -42,7 +43,7 @@ summary:focus-visible {
 h1,
 h2,
 h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--serif);
 }
 h1 {
   margin: 0;

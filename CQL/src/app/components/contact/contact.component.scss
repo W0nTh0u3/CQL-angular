@@ -38,7 +38,7 @@ address {
   display: block;
   margin: 0.16rem 0;
   color: inherit;
-  font: clamp(1.15rem, 2.5vw, 1.85rem) / 1.2 Georgia, "Times New Roman", serif;
+  font: clamp(1.15rem, 2.5vw, 1.85rem) / 1.2 var(--serif);
   text-decoration: none;
 }
 .contact a.contact-value {
